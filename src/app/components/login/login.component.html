@@ -1,0 +1,19 @@
+<div class="login-background">
+  <div class="login-block">
+  <h1>SashaCoin</h1>
+    <div class="explain">Login to SahshCoin Dashboard</div>
+  <div class="login-form"  [formGroup]="loginFormGroup">
+    <div class="p-input-icon-left">
+    <i class="pi pi-user"></i>
+    <input type="text" pInputText formControlName="username" placeholder="username">
+    </div>
+    <div class="p-input-icon-left">
+    <i class="pi pi-lock"></i>
+    <input type="password" pInputText placeholder="password" formControlName="password" />
+  </div>
+    <button pButton type="button" label="Login" (click)="login()"></button>
+    <div class="explain">You don't have a user ? <span class="create" (click)="changeView()">create now!</span></div>
+
+  </div>
+  </div>
+</div>

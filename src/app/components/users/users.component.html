@@ -1,0 +1,15 @@
+
+<div class="" *ngIf="usersList">
+<p-table [value]="usersList">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>username</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td><a href="./main/profile/{{user.username}}">{{user.username}}</a></td>
+    </tr>
+  </ng-template>
+</p-table>
+</div>

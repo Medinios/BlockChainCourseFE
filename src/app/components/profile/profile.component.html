@@ -1,0 +1,54 @@
+<div class="profile">
+<p-message severity="info" class="info" text="You are now in your profile" *ngIf="yourProfile"></p-message>
+
+<div class="user-profile" *ngIf="user">
+  <h1>{{user.username}} <button pButton type="button" label="Send Money" (click)="sendMoney(user.publicKey)"[disabled]="yourProfile" ></button>
+    <button pButton type="button" style="margin-left:.5vh"label="Mine" (click)="mining()" [disabled]="!yourProfile || pending == 0" class="p-button-help"></button></h1>
+  <small>There is <b>{{pending}}</b> Transaction</small>
+  <div class="mail"><i class="pi pi-envelope"></i><b> Email:</b> {{user.mail}}</div>
+  <div><i class="pi pi-money-bill"></i><b> Balance:</b> {{userBalance}} Sashacoins</div>
+  <div><i class="pi pi-folder"></i><b> Wallet ID:</b> {{user.publicKey}}</div>
+
+</div>
+<div class="transactions-title"><h2>Recived Transactions:</h2></div>
+<div class="transactionsRecived" *ngIf="transactions && transactions.transactions.received">
+<div class="transactions" >
+
+<div class="transaction" *ngFor="let rec of  transactions.transactions.received">
+  <p-card>
+    <p-header>
+      <b>Transaction <i  pTooltip="Verifiy Transaction" class="pi pi-check-square" style="margin-left:.5vh;" (click)="verify(rec)"></i></b>
+    </p-header>
+    <div class="date"><b><i class="pi pi-calendar"></i> date:</b> 12/12/2020</div>
+    <div class="amount"><b><i class="pi pi-money-bill"></i> amount:</b> {{rec.amount}} SashaCoin</div>
+    <div class="from"><b><i class="pi pi-user-minus"></i>  <span pTooltip="{{rec.fromAddress ? rec.fromAddress : 'BlockChain'}}" tooltipPosition="bottom"> from:</span></b>  {{rec.fromAddress ? rec.fromAddress : "BlockChain"}}</div>
+    <p-footer>
+      <i class="pi pi-thumbs-up"></i><b> Status:</b> <span class="success">Done!</span>
+    </p-footer>
+  </p-card>
+</div>
+</div>
+</div>
+<div class="transactions-title"><h2>Sent Transactions:</h2></div>
+<div class="transactionsRecived" *ngIf="transactions && transactions.transactions.sent && transactions.transactions.sent.length > 0 ; else noSent">
+  <div class="transactions" >
+
+    <div class="transaction"  *ngFor="let rec of  transactions.transactions.sent">
+      <p-card>
+        <p-header>
+          <b>Transaction <i  pTooltip="Verifiy Transaction" class="pi pi-check-square" style="margin-left:.5vh;" (click)="verify(rec)"></i></b>
+        </p-header>
+        <div class="date"><b><i class="pi pi-calendar"></i> date:</b> 12/05/2020</div>
+        <div class="amount"><b><i class="pi pi-money-bill"></i> amount:</b> {{rec.amount}} SashaCoin</div>
+        <div class="from"><b><i class="pi pi-user-minus"></i> to:</b> <span pTooltip="{{rec.toAddress ? rec.toAddress : 'BlockChain'}}" >{{rec.toAddress ? rec.toAddress : "BlockChain"}}</span></div>
+        <p-footer>
+          <i class="pi pi-thumbs-up"></i><b> Verified:</b> <span class="success">Done!</span>
+        </p-footer>
+      </p-card>
+    </div>
+  </div>
+</div>
+<ng-template #noSent>
+  <h4>There is no transaction yet!</h4>
+</ng-template>
+</div>

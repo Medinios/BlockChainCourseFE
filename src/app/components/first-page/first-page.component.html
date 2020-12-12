@@ -1,0 +1,14 @@
+<div class="howmuch">
+  <h1>{{totalCash}} SashaCoins in the Market</h1>
+</div>
+<div class="lastBlocks">
+  <h1>Last Blocks:</h1>
+  <div class="blocks">
+    <div class="block" *ngFor="let block of lastBlocks.lastBlocksMined">
+      <h3>Block:</h3>
+      <div class="hash"><b><i class="pi pi-angle-double-down"></i> Hash:</b> {{block.hash}}</div>
+      <div class="hash"><b><i class="pi pi-angle-double-right"></i> Previous Hash:</b> {{block.previousHash.hash ? block.previousHash.hash : 'Genesis Block'}}</div>
+      <div class="hash"><b><i class="pi pi-tags"></i> Number of Transactions:</b> {{block.transactions.length}}</div>
+    </div>
+  </div>
+</div>

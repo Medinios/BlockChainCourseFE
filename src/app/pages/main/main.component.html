@@ -1,0 +1,10 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img src="assets/images/sashacoinlogo.png" height="40" class="p-mr-2">
+    <a class="navhref"routerLink="../main" routerLinkActive="active">Home</a>
+    <a class="navhref"routerLink="./users" routerLinkActive="active">Users</a>
+  </ng-template>
+  Welcome <a href="main/profile/{{username}}">{{username}}</a>
+</p-menubar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

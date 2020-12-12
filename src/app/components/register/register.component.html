@@ -1,0 +1,23 @@
+<div class="login-background">
+  <div class="login-block">
+    <h1>SashaCoin</h1>
+    <div class="explain">Register to SashaCoin Dashboard</div>
+    <div class="login-form"  [formGroup]="registerFormGroup">
+      <div class="p-input-icon-left">
+        <i class="pi pi-user"></i>
+        <input type="text" pInputText formControlName="username" placeholder="username">
+      </div>
+      <div class="p-input-icon-left">
+        <i class="pi pi-lock"></i>
+        <input type="password" pInputText placeholder="password" formControlName="password" />
+      </div>
+      <div class="p-input-icon-left">
+        <i class="pi pi-envelope"></i>
+        <input type="text" pInputText formControlName="mail" placeholder="mail">
+      </div>
+      <button pButton type="button" label="Register" (click)="register()"></button>
+      <div class="explain">You have an account already? <span class="create" (click)="changeView()">Login now!</span></div>
+
+    </div>
+  </div>
+</div>
