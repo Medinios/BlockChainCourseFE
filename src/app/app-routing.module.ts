@@ -8,7 +8,7 @@ import {FirstPageComponent} from './components/first-page/first-page.component';
 
 
 const routes: Routes = [
-  { path: 'auth' , component: AuthComponent},
+  { path: '' , component: AuthComponent},
   {
     path: 'main', component: MainComponent,
     children: [

@@ -19,9 +19,8 @@
     <p-header>
       <b>Transaction <i  pTooltip="Verifiy Transaction" class="pi pi-check-square" style="margin-left:.5vh;" (click)="verify(rec)"></i></b>
     </p-header>
-    <div class="date"><b><i class="pi pi-calendar"></i> date:</b> 12/12/2020</div>
     <div class="amount"><b><i class="pi pi-money-bill"></i> amount:</b> {{rec.amount}} SashaCoin</div>
-    <div class="from"><b><i class="pi pi-user-minus"></i>  <span pTooltip="{{rec.fromAddress ? rec.fromAddress : 'BlockChain'}}" tooltipPosition="bottom"> from:</span></b>  {{rec.fromAddress ? rec.fromAddress : "BlockChain"}}</div>
+    <div class="from"><b><i class="pi pi-user-minus"></i>  <span> from:</span></b>  {{rec.fromAddress ? rec.fromAddress : "BlockChain"}}</div>
     <p-footer>
       <i class="pi pi-thumbs-up"></i><b> Status:</b> <span class="success">Done!</span>
     </p-footer>
@@ -38,9 +37,8 @@
         <p-header>
           <b>Transaction <i  pTooltip="Verifiy Transaction" class="pi pi-check-square" style="margin-left:.5vh;" (click)="verify(rec)"></i></b>
         </p-header>
-        <div class="date"><b><i class="pi pi-calendar"></i> date:</b> 12/05/2020</div>
         <div class="amount"><b><i class="pi pi-money-bill"></i> amount:</b> {{rec.amount}} SashaCoin</div>
-        <div class="from"><b><i class="pi pi-user-minus"></i> to:</b> <span pTooltip="{{rec.toAddress ? rec.toAddress : 'BlockChain'}}" >{{rec.toAddress ? rec.toAddress : "BlockChain"}}</span></div>
+        <div class="from"><b><i class="pi pi-user-minus"></i> to:</b> {{rec.toAddress ? rec.toAddress : "BlockChain"}}</div>
         <p-footer>
           <i class="pi pi-thumbs-up"></i><b> Verified:</b> <span class="success">Done!</span>
         </p-footer>
